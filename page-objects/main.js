@@ -1,6 +1,5 @@
 module.exports = {
     url: 'https://the-internet.herokuapp.com/',
-    commands: [mainPageCommands],
     elements: {
         h1Header: {
             selector: 'h1.heading'
