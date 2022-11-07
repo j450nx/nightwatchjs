@@ -1,27 +1,16 @@
 module.exports = {
-    'Verify page title': function (browser) {
-      browser
-        .url('https://the-internet.herokuapp.com/')
-        .assert.title('The Internet');
-    },
-    'Verify heading': function (browser) {
-      browser
-        .waitForElementVisible('h1.heading')
-        .assert.visible('h1.heading')
-        .assert.textContains('h1.heading', 'Welcome to the-internet');
-    },
-    'Verify h2 header': function (browser) {
-      browser
-        .assert.visible('h2')
-        .assert.textContains('h2', 'Available Examples');
-    },
-    'Verify the list': function (browser) {
-      browser
-      .waitForElementVisible('ul li')
-      .assert.elementsCount('ul li', 44);
-    },
-    'Verify the existence of the footer element': function (browser) {
-      browser
-        .assert.elementPresent('#page-footer');
+    'Verify main page': function (browser) {
+      const mainPage = browser.page.main();
+      mainPage
+        .navigate()
+        .assert.title('The Internet')
+        .waitForElementVisible('@h1Header')
+        .assert.visible('@h1Header')
+        .assert.textContains('@h1Header', 'Welcome to the-internet')
+        .assert.visible('@h2Header')
+        .assert.textContains('@h2Header', 'Available Examples')
+        .waitForElementVisible('@list')
+        .assert.elementsCount('@list', 44)
+        .assert.elementPresent('@footer');
     }
   }
