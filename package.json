@@ -15,6 +15,7 @@
   "devDependencies": {
     "@nightwatch/selenium-server": "^4.5.0",
     "chromedriver": "^107.0.3",
-    "geckodriver": "^3.2.0"
+    "geckodriver": "^3.2.0",
+    "request": "^2.88.2"
   }
 }

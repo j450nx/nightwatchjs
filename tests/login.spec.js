@@ -19,5 +19,7 @@ module.exports = {
             .assert.visible('@logoutButton')
             .logout()
             .waitForElementNotPresent('@logoutButton');
+    
+    browser.end();
     }
 }

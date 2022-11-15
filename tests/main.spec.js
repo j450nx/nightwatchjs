@@ -12,5 +12,7 @@ module.exports = {
         .waitForElementVisible('@list')
         .assert.elementsCount('@list', 44)
         .assert.elementPresent('@footer');
+      
+      browser.end();
     }
   }
